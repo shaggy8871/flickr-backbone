@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--
+	Copyright (C) John Ginsberg. For demonstration purposes only.
+	// -->
+	<title>Potato demo</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+	<script src="js/lib/underscore-min.js"></script>
+	<script src="js/lib/backbone-min.js"></script>
+	<link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+<script id="photoTemplate" type="text/template">
+	<div class="thumbnail" style="background: url('<%= media.m %>') no-repeat center"></div>
+	<div class="outline">
+		<span class="plus"><span class="g-plusone" data-size="tall" data-href="<%= link %>"></span></span>
+		<span class="overflow"><span class="title"><%= title %></span></span>
+		<div class="below800">
+			<span class="published">Published: <%= published %></span>
+			<span class="links">
+				<span class="author" title="See author on Flickr">Photo author</span> &middot; <span class="photo" title="See photo on Flickr">View on Flickr</span>
+			</span>
+		</div>
+		<div class="above800">
+			<span class="author" title="See author on Flickr">Photo author</span> &middot; <span class="published">Published: <%= published %></span> &middot; <span class="photo" title="See photo on Flickr">View on Flickr</span>
+		</div>
+	</div>
+</script>
+
+<script id="photoSingleTemplate" type="text/template">
+	<span class="backLink">&laquo; <a href="#" onclick="app.navigate ('', { trigger: true }); return false;">Back</a></span>
+	<span class="title" title="See photo on Flickr"><%= title %></span>
+	<span class="subtitle">
+		<span class="author" title="See author on Flickr">Photo author</span> | <span class="published">Published: <%= published %></span>
+	</span>
+	<span class="description"><%= description %></span>
+	<span class="tags">Tags: <%= tags %></span>
+</script>
+
+<div id="photoSingle"></div>
+
+<script src="js/flickr.js"></script>
+
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+</body>
+</html>
